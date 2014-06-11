@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "RJContactDetailsView"
-  s.version      = "0.0.2"
+  s.version      = "0.0.1"
   s.summary      = "RJContactDetailsView is a beautiful view for displaying contact information including head image,name and phone numbers."
   s.homepage     = "https://github.com/wuleijun/RJContactDetailsView"
   # s.screenshots  = "www.example.com/screenshots_1.gif", "www.example.com/screenshots_2.gif"
