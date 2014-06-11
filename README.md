@@ -3,6 +3,10 @@ RJContactDetailsView
 
 RJContactDetailsView is a beautiful view for displaying contact information including head image,name and phone numbers.
 
+#Screenshot
+
+![Resize icon](https://raw.githubusercontent.com/wuleijun/RJContactDetailsView/master/screenshot.png)
+
 # Install
 
 ## Manually
