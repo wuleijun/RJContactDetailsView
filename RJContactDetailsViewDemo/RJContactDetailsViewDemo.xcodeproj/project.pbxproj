@@ -1,0 +1,507 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AFBDC43F1947FA6F0068C4C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBDC43E1947FA6F0068C4C3 /* Foundation.framework */; };
+		AFBDC4411947FA6F0068C4C3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBDC4401947FA6F0068C4C3 /* CoreGraphics.framework */; };
+		AFBDC4431947FA6F0068C4C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBDC4421947FA6F0068C4C3 /* UIKit.framework */; };
+		AFBDC4491947FA6F0068C4C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC4471947FA6F0068C4C3 /* InfoPlist.strings */; };
+		AFBDC44B1947FA6F0068C4C3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC44A1947FA6F0068C4C3 /* main.m */; };
+		AFBDC44F1947FA6F0068C4C3 /* RJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC44E1947FA6F0068C4C3 /* RJAppDelegate.m */; };
+		AFBDC4521947FA6F0068C4C3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC4501947FA6F0068C4C3 /* Main.storyboard */; };
+		AFBDC4551947FA6F0068C4C3 /* RJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC4541947FA6F0068C4C3 /* RJViewController.m */; };
+		AFBDC4571947FA6F0068C4C3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC4561947FA6F0068C4C3 /* Images.xcassets */; };
+		AFBDC45E1947FA700068C4C3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBDC45D1947FA700068C4C3 /* XCTest.framework */; };
+		AFBDC45F1947FA700068C4C3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBDC43E1947FA6F0068C4C3 /* Foundation.framework */; };
+		AFBDC4601947FA700068C4C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBDC4421947FA6F0068C4C3 /* UIKit.framework */; };
+		AFBDC4681947FA700068C4C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC4661947FA700068C4C3 /* InfoPlist.strings */; };
+		AFBDC46A1947FA700068C4C3 /* RJContactDetailsViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC4691947FA700068C4C3 /* RJContactDetailsViewDemoTests.m */; };
+		AFBDC4761947FAD50068C4C3 /* RJContactDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC4751947FAD50068C4C3 /* RJContactDetailsView.m */; };
+		AFBDC47A1947FAF80068C4C3 /* RJContact.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC4791947FAF80068C4C3 /* RJContact.m */; };
+		AFBDC47C1947FBB50068C4C3 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC47B1947FBB50068C4C3 /* head.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AFBDC4611947FA700068C4C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AFBDC4331947FA6F0068C4C3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AFBDC43A1947FA6F0068C4C3;
+			remoteInfo = RJContactDetailsViewDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AFBDC43B1947FA6F0068C4C3 /* RJContactDetailsViewDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RJContactDetailsViewDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFBDC43E1947FA6F0068C4C3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		AFBDC4401947FA6F0068C4C3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		AFBDC4421947FA6F0068C4C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		AFBDC4461947FA6F0068C4C3 /* RJContactDetailsViewDemo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RJContactDetailsViewDemo-Info.plist"; sourceTree = "<group>"; };
+		AFBDC4481947FA6F0068C4C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AFBDC44A1947FA6F0068C4C3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AFBDC44C1947FA6F0068C4C3 /* RJContactDetailsViewDemo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RJContactDetailsViewDemo-Prefix.pch"; sourceTree = "<group>"; };
+		AFBDC44D1947FA6F0068C4C3 /* RJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJAppDelegate.h; sourceTree = "<group>"; };
+		AFBDC44E1947FA6F0068C4C3 /* RJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJAppDelegate.m; sourceTree = "<group>"; };
+		AFBDC4511947FA6F0068C4C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AFBDC4531947FA6F0068C4C3 /* RJViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RJViewController.h; sourceTree = "<group>"; };
+		AFBDC4541947FA6F0068C4C3 /* RJViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJViewController.m; sourceTree = "<group>"; };
+		AFBDC4561947FA6F0068C4C3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		AFBDC45C1947FA700068C4C3 /* RJContactDetailsViewDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RJContactDetailsViewDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFBDC45D1947FA700068C4C3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		AFBDC4651947FA700068C4C3 /* RJContactDetailsViewDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RJContactDetailsViewDemoTests-Info.plist"; sourceTree = "<group>"; };
+		AFBDC4671947FA700068C4C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AFBDC4691947FA700068C4C3 /* RJContactDetailsViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJContactDetailsViewDemoTests.m; sourceTree = "<group>"; };
+		AFBDC4741947FAD50068C4C3 /* RJContactDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJContactDetailsView.h; sourceTree = "<group>"; };
+		AFBDC4751947FAD50068C4C3 /* RJContactDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJContactDetailsView.m; sourceTree = "<group>"; };
+		AFBDC4781947FAF80068C4C3 /* RJContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJContact.h; sourceTree = "<group>"; };
+		AFBDC4791947FAF80068C4C3 /* RJContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJContact.m; sourceTree = "<group>"; };
+		AFBDC47B1947FBB50068C4C3 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AFBDC4381947FA6F0068C4C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBDC4411947FA6F0068C4C3 /* CoreGraphics.framework in Frameworks */,
+				AFBDC4431947FA6F0068C4C3 /* UIKit.framework in Frameworks */,
+				AFBDC43F1947FA6F0068C4C3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBDC4591947FA700068C4C3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBDC45E1947FA700068C4C3 /* XCTest.framework in Frameworks */,
+				AFBDC4601947FA700068C4C3 /* UIKit.framework in Frameworks */,
+				AFBDC45F1947FA700068C4C3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AFBDC4321947FA6F0068C4C3 = {
+			isa = PBXGroup;
+			children = (
+				AFBDC4441947FA6F0068C4C3 /* RJContactDetailsViewDemo */,
+				AFBDC4631947FA700068C4C3 /* RJContactDetailsViewDemoTests */,
+				AFBDC43D1947FA6F0068C4C3 /* Frameworks */,
+				AFBDC43C1947FA6F0068C4C3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AFBDC43C1947FA6F0068C4C3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDC43B1947FA6F0068C4C3 /* RJContactDetailsViewDemo.app */,
+				AFBDC45C1947FA700068C4C3 /* RJContactDetailsViewDemoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AFBDC43D1947FA6F0068C4C3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDC43E1947FA6F0068C4C3 /* Foundation.framework */,
+				AFBDC4401947FA6F0068C4C3 /* CoreGraphics.framework */,
+				AFBDC4421947FA6F0068C4C3 /* UIKit.framework */,
+				AFBDC45D1947FA700068C4C3 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AFBDC4441947FA6F0068C4C3 /* RJContactDetailsViewDemo */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDC4771947FAE20068C4C3 /* Models */,
+				AFBDC4731947FAD50068C4C3 /* RJContactDetailsView */,
+				AFBDC44D1947FA6F0068C4C3 /* RJAppDelegate.h */,
+				AFBDC44E1947FA6F0068C4C3 /* RJAppDelegate.m */,
+				AFBDC4501947FA6F0068C4C3 /* Main.storyboard */,
+				AFBDC4531947FA6F0068C4C3 /* RJViewController.h */,
+				AFBDC4541947FA6F0068C4C3 /* RJViewController.m */,
+				AFBDC4561947FA6F0068C4C3 /* Images.xcassets */,
+				AFBDC4451947FA6F0068C4C3 /* Supporting Files */,
+			);
+			path = RJContactDetailsViewDemo;
+			sourceTree = "<group>";
+		};
+		AFBDC4451947FA6F0068C4C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDC47B1947FBB50068C4C3 /* head.png */,
+				AFBDC4461947FA6F0068C4C3 /* RJContactDetailsViewDemo-Info.plist */,
+				AFBDC4471947FA6F0068C4C3 /* InfoPlist.strings */,
+				AFBDC44A1947FA6F0068C4C3 /* main.m */,
+				AFBDC44C1947FA6F0068C4C3 /* RJContactDetailsViewDemo-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AFBDC4631947FA700068C4C3 /* RJContactDetailsViewDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDC4691947FA700068C4C3 /* RJContactDetailsViewDemoTests.m */,
+				AFBDC4641947FA700068C4C3 /* Supporting Files */,
+			);
+			path = RJContactDetailsViewDemoTests;
+			sourceTree = "<group>";
+		};
+		AFBDC4641947FA700068C4C3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDC4651947FA700068C4C3 /* RJContactDetailsViewDemoTests-Info.plist */,
+				AFBDC4661947FA700068C4C3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		AFBDC4731947FAD50068C4C3 /* RJContactDetailsView */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDC4741947FAD50068C4C3 /* RJContactDetailsView.h */,
+				AFBDC4751947FAD50068C4C3 /* RJContactDetailsView.m */,
+			);
+			name = RJContactDetailsView;
+			path = ../../RJContactDetailsView;
+			sourceTree = "<group>";
+		};
+		AFBDC4771947FAE20068C4C3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AFBDC4781947FAF80068C4C3 /* RJContact.h */,
+				AFBDC4791947FAF80068C4C3 /* RJContact.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AFBDC43A1947FA6F0068C4C3 /* RJContactDetailsViewDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFBDC46D1947FA700068C4C3 /* Build configuration list for PBXNativeTarget "RJContactDetailsViewDemo" */;
+			buildPhases = (
+				AFBDC4371947FA6F0068C4C3 /* Sources */,
+				AFBDC4381947FA6F0068C4C3 /* Frameworks */,
+				AFBDC4391947FA6F0068C4C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RJContactDetailsViewDemo;
+			productName = RJContactDetailsViewDemo;
+			productReference = AFBDC43B1947FA6F0068C4C3 /* RJContactDetailsViewDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AFBDC45B1947FA700068C4C3 /* RJContactDetailsViewDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AFBDC4701947FA700068C4C3 /* Build configuration list for PBXNativeTarget "RJContactDetailsViewDemoTests" */;
+			buildPhases = (
+				AFBDC4581947FA700068C4C3 /* Sources */,
+				AFBDC4591947FA700068C4C3 /* Frameworks */,
+				AFBDC45A1947FA700068C4C3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AFBDC4621947FA700068C4C3 /* PBXTargetDependency */,
+			);
+			name = RJContactDetailsViewDemoTests;
+			productName = RJContactDetailsViewDemoTests;
+			productReference = AFBDC45C1947FA700068C4C3 /* RJContactDetailsViewDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AFBDC4331947FA6F0068C4C3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = RJ;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "rayjune Wu";
+				TargetAttributes = {
+					AFBDC45B1947FA700068C4C3 = {
+						TestTargetID = AFBDC43A1947FA6F0068C4C3;
+					};
+				};
+			};
+			buildConfigurationList = AFBDC4361947FA6F0068C4C3 /* Build configuration list for PBXProject "RJContactDetailsViewDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AFBDC4321947FA6F0068C4C3;
+			productRefGroup = AFBDC43C1947FA6F0068C4C3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AFBDC43A1947FA6F0068C4C3 /* RJContactDetailsViewDemo */,
+				AFBDC45B1947FA700068C4C3 /* RJContactDetailsViewDemoTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AFBDC4391947FA6F0068C4C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBDC4571947FA6F0068C4C3 /* Images.xcassets in Resources */,
+				AFBDC47C1947FBB50068C4C3 /* head.png in Resources */,
+				AFBDC4491947FA6F0068C4C3 /* InfoPlist.strings in Resources */,
+				AFBDC4521947FA6F0068C4C3 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBDC45A1947FA700068C4C3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBDC4681947FA700068C4C3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AFBDC4371947FA6F0068C4C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBDC44F1947FA6F0068C4C3 /* RJAppDelegate.m in Sources */,
+				AFBDC44B1947FA6F0068C4C3 /* main.m in Sources */,
+				AFBDC4761947FAD50068C4C3 /* RJContactDetailsView.m in Sources */,
+				AFBDC4551947FA6F0068C4C3 /* RJViewController.m in Sources */,
+				AFBDC47A1947FAF80068C4C3 /* RJContact.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFBDC4581947FA700068C4C3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFBDC46A1947FA700068C4C3 /* RJContactDetailsViewDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AFBDC4621947FA700068C4C3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AFBDC43A1947FA6F0068C4C3 /* RJContactDetailsViewDemo */;
+			targetProxy = AFBDC4611947FA700068C4C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AFBDC4471947FA6F0068C4C3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFBDC4481947FA6F0068C4C3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AFBDC4501947FA6F0068C4C3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFBDC4511947FA6F0068C4C3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AFBDC4661947FA700068C4C3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AFBDC4671947FA700068C4C3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AFBDC46B1947FA700068C4C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		AFBDC46C1947FA700068C4C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AFBDC46E1947FA700068C4C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RJContactDetailsViewDemo/RJContactDetailsViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "RJContactDetailsViewDemo/RJContactDetailsViewDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		AFBDC46F1947FA700068C4C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RJContactDetailsViewDemo/RJContactDetailsViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "RJContactDetailsViewDemo/RJContactDetailsViewDemo-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		AFBDC4711947FA700068C4C3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RJContactDetailsViewDemo.app/RJContactDetailsViewDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RJContactDetailsViewDemo/RJContactDetailsViewDemo-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "RJContactDetailsViewDemoTests/RJContactDetailsViewDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		AFBDC4721947FA700068C4C3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RJContactDetailsViewDemo.app/RJContactDetailsViewDemo";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RJContactDetailsViewDemo/RJContactDetailsViewDemo-Prefix.pch";
+				INFOPLIST_FILE = "RJContactDetailsViewDemoTests/RJContactDetailsViewDemoTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AFBDC4361947FA6F0068C4C3 /* Build configuration list for PBXProject "RJContactDetailsViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFBDC46B1947FA700068C4C3 /* Debug */,
+				AFBDC46C1947FA700068C4C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFBDC46D1947FA700068C4C3 /* Build configuration list for PBXNativeTarget "RJContactDetailsViewDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFBDC46E1947FA700068C4C3 /* Debug */,
+				AFBDC46F1947FA700068C4C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AFBDC4701947FA700068C4C3 /* Build configuration list for PBXNativeTarget "RJContactDetailsViewDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AFBDC4711947FA700068C4C3 /* Debug */,
+				AFBDC4721947FA700068C4C3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AFBDC4331947FA6F0068C4C3 /* Project object */;
+}
