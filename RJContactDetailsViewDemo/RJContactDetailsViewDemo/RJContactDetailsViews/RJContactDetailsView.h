@@ -15,14 +15,23 @@
 @property (nonatomic,weak) id<RJContactDetailsViewDelegate> delegate;
 @property (nonatomic,weak) id<RJContactDetailsViewDataSource> dataSource;
 
-- (id)initWithContact:(RJContact *)contact;
+/*You can set following properties to alter appearance*/
+@property (nonatomic,strong) UIColor *topBarColor;
+@property (nonatomic,strong) UIImage *headImage;
+@property (nonatomic,strong) NSString *contactName;
+@property (nonatomic,strong) UIColor *contactNameLabelTextColor;
+@property (nonatomic,strong) UIColor *intoDetailsButtonNormalTextColor;
+@property (nonatomic,strong) UIColor *intoDetailsButtonHightlightedTextColor;
+@property (nonatomic,strong) NSString *intoDetailsButtonTitle;
+
+- (id)initWithHeadImage:(UIImage *)image contactName:(NSString *)name phones:(NSArray *)phones;
 - (void)show;
 - (void)dismiss;
 @end
 
 @protocol RJContactDetailsViewDelegate <NSObject>
 
-- (void)contactDetailsViewDidSelectPhone:(NSString *)phone;
+- (void)contactTableViewDidSelectPhone:(NSString *)phone;
 - (void)contactDetailsViewDidTouchedIntoDetails:(RJContactDetailsView *)contactDetailsView;
 @end
 

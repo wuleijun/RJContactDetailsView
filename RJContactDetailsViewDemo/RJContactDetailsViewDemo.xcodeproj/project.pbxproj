@@ -21,7 +21,6 @@
 		AFBDC4601947FA700068C4C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFBDC4421947FA6F0068C4C3 /* UIKit.framework */; };
 		AFBDC4681947FA700068C4C3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC4661947FA700068C4C3 /* InfoPlist.strings */; };
 		AFBDC46A1947FA700068C4C3 /* RJContactDetailsViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC4691947FA700068C4C3 /* RJContactDetailsViewDemoTests.m */; };
-		AFBDC47A1947FAF80068C4C3 /* RJContact.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC4791947FAF80068C4C3 /* RJContact.m */; };
 		AFBDC47C1947FBB50068C4C3 /* head.png in Resources */ = {isa = PBXBuildFile; fileRef = AFBDC47B1947FBB50068C4C3 /* head.png */; };
 		AFBDC4801947FF370068C4C3 /* RJContactDetailsView.m in Sources */ = {isa = PBXBuildFile; fileRef = AFBDC47F1947FF370068C4C3 /* RJContactDetailsView.m */; };
 /* End PBXBuildFile section */
@@ -56,8 +55,6 @@
 		AFBDC4651947FA700068C4C3 /* RJContactDetailsViewDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RJContactDetailsViewDemoTests-Info.plist"; sourceTree = "<group>"; };
 		AFBDC4671947FA700068C4C3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AFBDC4691947FA700068C4C3 /* RJContactDetailsViewDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RJContactDetailsViewDemoTests.m; sourceTree = "<group>"; };
-		AFBDC4781947FAF80068C4C3 /* RJContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJContact.h; sourceTree = "<group>"; };
-		AFBDC4791947FAF80068C4C3 /* RJContact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJContact.m; sourceTree = "<group>"; };
 		AFBDC47B1947FBB50068C4C3 /* head.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = head.png; sourceTree = "<group>"; };
 		AFBDC47E1947FF370068C4C3 /* RJContactDetailsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJContactDetailsView.h; sourceTree = "<group>"; };
 		AFBDC47F1947FF370068C4C3 /* RJContactDetailsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJContactDetailsView.m; sourceTree = "<group>"; };
@@ -121,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				AFBDC47D1947FF370068C4C3 /* RJContactDetailsViews */,
-				AFBDC4771947FAE20068C4C3 /* Models */,
 				AFBDC44D1947FA6F0068C4C3 /* RJAppDelegate.h */,
 				AFBDC44E1947FA6F0068C4C3 /* RJAppDelegate.m */,
 				AFBDC4501947FA6F0068C4C3 /* Main.storyboard */,
@@ -161,15 +157,6 @@
 				AFBDC4661947FA700068C4C3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AFBDC4771947FAE20068C4C3 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				AFBDC4781947FAF80068C4C3 /* RJContact.h */,
-				AFBDC4791947FAF80068C4C3 /* RJContact.m */,
-			);
-			name = Models;
 			sourceTree = "<group>";
 		};
 		AFBDC47D1947FF370068C4C3 /* RJContactDetailsViews */ = {
@@ -284,7 +271,6 @@
 				AFBDC44B1947FA6F0068C4C3 /* main.m in Sources */,
 				AFBDC4551947FA6F0068C4C3 /* RJViewController.m in Sources */,
 				AFBDC4801947FF370068C4C3 /* RJContactDetailsView.m in Sources */,
-				AFBDC47A1947FAF80068C4C3 /* RJContact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -16,10 +16,9 @@
 #define RJContactNameLabelHeight 20
 #define RJContactNameLabelFontSize 16
 
-
+#define RJDefaultTopBarColor [UIColor colorWithRed:0.20392156862745098 green:0.596078431372549 blue:0.8588235294117647 alpha:1.0]
 
 #import "RJContactDetailsView.h"
-#import "RJContact.h"
 
 @interface UIImage (CornerImage)
 - (UIImage *)cornerImageWithCornerRadius:(CGFloat)radius;
@@ -32,19 +31,27 @@
 @property (nonatomic,strong) UITableView *contactTableView;
 @property (nonatomic,strong) UIImageView *contactHeadImageView;
 @property (nonatomic,strong) UILabel *contactNameLabel;
-
-@property (nonatomic,strong) RJContact *contact;
+@property (nonatomic,strong) UIImageView *topBarImageView;
+@property (nonatomic,strong) UIButton *intoDetailsButton;
+@property (nonatomic,strong) NSArray *contactPhones;
 @end
 
 @implementation RJContactDetailsView
 
-- (id)initWithContact:(RJContact *)contact
+- (id)initWithHeadImage:(UIImage *)image contactName:(NSString *)name phones:(NSArray *)phones
 {
     self = [super initWithFrame:screenBounds];
     if (self) {
-        _contact = contact;
+        _contactPhones = phones;
+        //Default Appearance
+        _headImage = image;
+        _contactName = name;
+        _topBarColor = [UIColor blueColor];
+        _intoDetailsButtonNormalTextColor = [UIColor blackColor];
+        _intoDetailsButtonHightlightedTextColor = [UIColor lightTextColor];
         self.opaque = YES;
         self.alpha = 1;
+        
         [self _setUpViews];
     }
     return self;
@@ -53,19 +60,19 @@
 - (void)_setUpViews
 {
     /*Background View*/
-    self.backgroundView = [[UIView alloc] initWithFrame:screenBounds];
-    self.backgroundView.backgroundColor = [UIColor blackColor];
-    self.backgroundView.alpha = 0.0;
+    _backgroundView = [[UIView alloc] initWithFrame:screenBounds];
+    _backgroundView.backgroundColor = [UIColor blackColor];
+    _backgroundView.alpha = 0.0;
     
     UITapGestureRecognizer *tapBackgroundGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
     tapBackgroundGesture.numberOfTapsRequired = 1;
     [self.backgroundView addGestureRecognizer:tapBackgroundGesture];
     
-    [self addSubview:self.backgroundView];
+    [self addSubview:_backgroundView];
     
     /*Alert View*/
-    self.alertView = [self _alertView];
-    [self addSubview:self.alertView];
+    _alertView = [self _alertView];
+    [self addSubview:_alertView];
 }
 
 - (UIView *)_alertView
@@ -78,32 +85,32 @@
     alertView.clipsToBounds = YES;
     
     /*Topbar*/
-    UIImageView *topBarView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(alertView.frame), RJContactDetailsViewDefaultTopBarHeight)];
-    topBarView.backgroundColor = [UIColor blueColor];
-    [alertView addSubview:topBarView];
+    _topBarImageView= [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(alertView.frame), RJContactDetailsViewDefaultTopBarHeight)];
+    _topBarImageView.backgroundColor = _topBarColor;
+    [alertView addSubview:_topBarImageView];
     
     /*Contact head imageview*/
-    self.contactHeadImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, RJHeadImageViewSizeLenth, RJHeadImageViewSizeLenth)];
-    self.contactHeadImageView.image = [self.contact.headImage cornerImageWithCornerRadius:self.contact.headImage.size.width/2];
-    self.contactHeadImageView.center = CGPointMake(CGRectGetWidth(alertView.frame)/2, RJContactDetailsViewDefaultTopBarHeight);
-    [alertView addSubview:self.contactHeadImageView];
+    _contactHeadImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, RJHeadImageViewSizeLenth, RJHeadImageViewSizeLenth)];
+    _contactHeadImageView.image = [_headImage cornerImageWithCornerRadius:_headImage.size.width/2];
+    _contactHeadImageView.center = CGPointMake(CGRectGetWidth(alertView.frame)/2, RJContactDetailsViewDefaultTopBarHeight);
+    [alertView addSubview:_contactHeadImageView];
     
     /*Contact Name Label*/
-    self.contactNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.contactHeadImageView.frame), CGRectGetWidth(alertView.frame),RJContactNameLabelHeight)];
-    self.contactNameLabel.textAlignment = NSTextAlignmentCenter;
-    self.contactNameLabel.font = [UIFont boldSystemFontOfSize:RJContactNameLabelFontSize];
-    self.contactNameLabel.textColor = [UIColor blackColor];
-    self.contactNameLabel.text = self.contact.name;
-    [alertView addSubview:self.contactNameLabel];
+    _contactNameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.contactHeadImageView.frame), CGRectGetWidth(alertView.frame),RJContactNameLabelHeight)];
+    _contactNameLabel.textAlignment = NSTextAlignmentCenter;
+    _contactNameLabel.font = [UIFont boldSystemFontOfSize:RJContactNameLabelFontSize];
+    _contactNameLabel.textColor = [UIColor blackColor];
+    _contactNameLabel.text = _contactName;
+    [alertView addSubview:_contactNameLabel];
     
     /*table view*/
-    if ([self.contact.phones count]>0) {
-        int cellCount = MIN([self.contact.phones count], 3);
-        self.contactTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.contactNameLabel.frame), RJContactDetailsViewDefaultWidth, RJTableViewCellHeight*cellCount)];
-        self.contactTableView.rowHeight = RJTableViewCellHeight;
-        self.contactTableView.delegate = self;
-        self.contactTableView.dataSource = self;
-        [alertView addSubview:self.contactTableView];
+    if ([_contactPhones count]>0) {
+        int cellCount = MIN([_contactPhones count], 3);
+        _contactTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.contactNameLabel.frame), RJContactDetailsViewDefaultWidth, RJTableViewCellHeight*cellCount)];
+        _contactTableView.rowHeight = RJTableViewCellHeight;
+        _contactTableView.delegate = self;
+        _contactTableView.dataSource = self;
+        [alertView addSubview:_contactTableView];
         
         //alert AlertView height
         alertViewHeight = alertViewHeight + RJTableViewCellHeight * cellCount;
@@ -111,40 +118,74 @@
     }
 
     /*Into detail button*/
-    UIButton *intoDetail = [UIButton buttonWithType:UIButtonTypeCustom];
-    intoDetail.frame = CGRectMake(0, alertViewHeight-RJTableViewCellHeight, RJContactDetailsViewDefaultWidth, RJTableViewCellHeight);
-    intoDetail.backgroundColor = [UIColor lightGrayColor];
-    [intoDetail addTarget:self action:@selector(intoDetaisTouched:) forControlEvents:UIControlEventTouchUpInside];
-    intoDetail.titleLabel.font = [UIFont systemFontOfSize:RJContactNameLabelFontSize];
-    [intoDetail setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [intoDetail setTitleColor:[UIColor lightTextColor] forState:UIControlStateHighlighted];
-    [intoDetail setTitle:NSLocalizedString(@"More details", @"详情") forState:UIControlStateNormal];
-    [alertView addSubview:intoDetail];
+    _intoDetailsButton = [UIButton buttonWithType:UIButtonTypeCustom];
+    _intoDetailsButton.frame = CGRectMake(0, alertViewHeight-RJTableViewCellHeight, RJContactDetailsViewDefaultWidth, RJTableViewCellHeight);
+    _intoDetailsButton.backgroundColor = [UIColor lightGrayColor];
+    [_intoDetailsButton addTarget:self action:@selector(intoDetaisTouched:) forControlEvents:UIControlEventTouchUpInside];
+    _intoDetailsButton.titleLabel.font = [UIFont systemFontOfSize:RJContactNameLabelFontSize];
+    [_intoDetailsButton setTitleColor:_intoDetailsButtonNormalTextColor forState:UIControlStateNormal];
+    [_intoDetailsButton setTitleColor:_intoDetailsButtonHightlightedTextColor forState:UIControlStateHighlighted];
+    [_intoDetailsButton setTitle:_intoDetailsButtonTitle?_intoDetailsButtonTitle:NSLocalizedString(@"More details", @"详情") forState:UIControlStateNormal];
+    [alertView addSubview:_intoDetailsButton];
     
     return alertView;
+}
+
+#pragma mark - Setters
+- (void)setTopBarColor:(UIColor *)topBarColor
+{
+    _topBarImageView.backgroundColor = topBarColor;
+}
+
+- (void)setHeadImage:(UIImage *)headImage
+{
+    [self.contactHeadImageView setImage:[headImage cornerImageWithCornerRadius:headImage.size.width/2]];
+}
+
+- (void)setContactName:(NSString *)contactName
+{
+    self.contactNameLabel.text = contactName;
+}
+
+- (void)setContactNameLabelTextColor:(UIColor *)contactNameLabelTextColor
+{
+    self.contactNameLabel.textColor = contactNameLabelTextColor;
+}
+
+- (void)setIntoDetailsButtonNormalTextColor:(UIColor *)intoDetailsButtonNormalTextColor
+{
+    [_intoDetailsButton setTitleColor:intoDetailsButtonNormalTextColor forState:UIControlStateNormal];
+}
+
+- (void)setIntoDetailsButtonHightlightedTextColor:(UIColor *)intoDetailsButtonHightlightedTextColor
+{
+    [_intoDetailsButton setTitleColor:intoDetailsButtonHightlightedTextColor forState:UIControlStateHighlighted];
+}
+
+- (void)setIntoDetailsButtonTitle:(NSString *)intoDetailsButtonTitle
+{
+    [_intoDetailsButton setTitle:intoDetailsButtonTitle forState:UIControlStateNormal];
 }
 
 #pragma mark - UITableView DataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.contact.phones count];
+    return [self.contactPhones count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if ([self.dataSource respondsToSelector:@selector(contactTableView:cellForRowAtIndexPath:phones:)]) {
-        return [self.dataSource contactTableView:tableView cellForRowAtIndexPath:indexPath phones:self.contact.phones];
-    }else{
-        return nil;
+        return [self.dataSource contactTableView:tableView cellForRowAtIndexPath:indexPath phones:self.contactPhones];
     }
+    return nil;
 }
 
 #pragma mark - UITableView Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if ([self.delegate respondsToSelector:@selector(contactDetailsViewDidSelectPhone:)]) {
-        NSString *phone = self.contact.phones[indexPath.row];
-        [self.delegate contactDetailsViewDidSelectPhone:phone];
+    if ([self.delegate respondsToSelector:@selector(contactTableViewDidSelectPhone:)]) {
+        [self.delegate contactTableViewDidSelectPhone:self.contactPhones[indexPath.row]];
     }
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }

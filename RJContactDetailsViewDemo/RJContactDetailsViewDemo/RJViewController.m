@@ -7,7 +7,6 @@
 //
 
 #import "RJViewController.h"
-#import "RJContact.h"
 #import "RJContactDetailsView.h"
 
 @interface RJViewController ()<RJContactDetailsViewDataSource,RJContactDetailsViewDelegate>
@@ -29,12 +28,19 @@
 }
 
 - (IBAction)showContactView:(id)sender {
-    RJContact *contact = [[RJContact alloc] init];
-    contact.name = @"rayjune";
-    contact.headImage = [UIImage imageNamed:@"head"];
-    contact.phones = @[@"15011111111",@"15022222222",@"15033333333",@"057188888888",@"123456"];
     
-    RJContactDetailsView *contactDetailsView = [[RJContactDetailsView alloc] initWithContact:contact];
+    RJContactDetailsView *contactDetailsView = [[RJContactDetailsView alloc] initWithHeadImage:[UIImage imageNamed:@"head"] contactName:@"rayjune" phones:@[@"15088888888",@"15067755555"]];
+    {
+        //set appearance
+        contactDetailsView.topBarColor = [UIColor blueColor];
+        contactDetailsView.intoDetailsButtonNormalTextColor = [UIColor blackColor];
+        contactDetailsView.intoDetailsButtonHightlightedTextColor = [UIColor lightTextColor];
+        contactDetailsView.contactNameLabelTextColor = [UIColor blackColor];
+        contactDetailsView.intoDetailsButtonTitle = @"More details";
+        
+        contactDetailsView.headImage = [UIImage imageNamed:@"head"];
+        contactDetailsView.contactName = @"rayjune";
+    }
     contactDetailsView.dataSource = self;
     contactDetailsView.delegate = self;
     [contactDetailsView show];
@@ -52,7 +58,7 @@
 }
 
 #pragma mark - RJContactDetailsView Delegate
-- (void)contactDetailsViewDidSelectPhone:(NSString *)phone
+- (void)contactTableViewDidSelectPhone:(NSString *)phone
 {
     NSLog(@"You touched %@!",phone);
 }
