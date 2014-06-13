@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-@class RJContact;
 @protocol RJContactDetailsViewDelegate;
 @protocol RJContactDetailsViewDataSource;
 
